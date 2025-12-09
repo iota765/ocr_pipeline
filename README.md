@@ -34,10 +34,10 @@ To make this project **fully free and runnable anywhere**, the OCR component was
 
 ## ▶ How to Run
 
-### 1️⃣ Install dependencies
+1️⃣ Install dependencies
 pip install -r requirements.txt
 
-### 2️⃣ Install Tesseract OCR (Windows)
+2️⃣ Install Tesseract OCR (Windows)
 Download: https://github.com/UB-Mannheim/tesseract/wiki
 
 If needed, set executable path in code:
