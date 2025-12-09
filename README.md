@@ -1,35 +1,40 @@
-# Medical Handwriting OCR & PII Extraction Pipeline
+# 🏥 Medical Handwriting OCR & PII Extraction Pipeline
 
-This project is a **batch OCR + PII extraction pipeline** for handwritten **hospital case sheets, progress notes, and drug charts**.
+A **batch OCR + PII extraction system** designed for handwritten **hospital case sheets, progress notes, and drug charts.**
 
-It:
+---
 
-- Reads **handwritten medical documents** (JPG/PNG/PDF → image).
-- Uses an **OCR engine** (currently Pen-to-Print via RapidAPI).
-- Normalizes the raw text.
-- Extracts **structured PII + clinical info**, including:
+## 🔍 What the pipeline does
+
+It automatically:
+
+- Reads **scanned handwritten medical documents** (`.jpg`, `.png`, `.pdf` → image per page)
+- Calls an **OCR engine** (currently Pen-to-Print via RapidAPI)
+- Normalizes raw text (removes noise, fixes spacing / line breaks)
+- Extracts **structured PII & clinical data**, including:
   - Patient name, IPD No, UHID, Age, Sex, Bed No
   - Vitals (BP, PR, RR, Temperature)
   - Medications (drug name, dose, route, frequency)
-  - Generic PII (dates, phones, emails, etc.)
-- Saves:
-  - OCR text as `output/ocr_text/<image_name>.txt`
-  - PII JSON as `output/pii_json/<image_name>.json`
+  - Generic PII (dates, phone numbers, emails, etc.)
+- Saves results to disk:
+  - Raw OCR → `output/ocr_text/<image_name>.txt`
+  - PII JSON → `output/pii_json/<image_name>.json`
 
-This pipeline was built specifically around **real hospital documents** and tuned for noisy handwriting + OCR errors.
+🔧 The pipeline is tuned for **noisy handwriting + OCR mistakes commonly seen in hospitals.**
 
 ---
 
 ## 🧱 Tech Stack
 
-Core libraries used:
+| Purpose | Library |
+|--------|---------|
+| OCR API call | `requests` |
+| Image handling & EXIF auto-rotation | `pillow` |
+| Env vars & secrets | `python-dotenv` |
+| Regex for PII & medical patterns | `regex` |
+| Optional image preprocessing | `opencv-python`, `numpy` |
 
-- `requests` – calling the OCR API (Pen-to-Print via RapidAPI)
-- `pillow` – image loading and **auto-rotation** (EXIF-based)
-- `python-dotenv` – managing secrets via `.env`
-- `regex` – robust pattern matching for PII & meds
-
-Dependencies (from `pyproject.toml`):
+From `pyproject.toml`:
 
 ```toml
 dependencies = [
@@ -43,48 +48,49 @@ dependencies = [
 📁 Project Structure
 ocr/
 ├─ pipeline.py              # Main entry point: batch process input/ → output/
-├─ pen_to_print_client.py   # RapidAPI Pen-to-Print OCR wrapper (with rotation fix)
-├─ pii_extractor.py         # All regex logic: PII + clinical + medications
+├─ pen_to_print_client.py   # OCR wrapper (rotation fix + error handling)
+├─ pii_extractor.py         # All regex logic: PII + vitals + medications
 ├─ config.py                # Loads API keys / endpoints from .env
 ├─ .env                     # Environment variables (NOT committed)
 │
-├─ input/                   # Put your scanned images here (img1.jpg, img2.jpg, ...)
+├─ input/                   # Place scanned images here (img1.jpg, img2.png, ...)
 │
 └─ output/
-   ├─ ocr_text/             # Raw OCR text files (img1.txt, img2.txt, ...)
-   └─ pii_json/             # Extracted PII in JSON per image
+   ├─ ocr_text/             # Raw OCR text (img1.txt, img2.txt, ...)
+   └─ pii_json/             # Extracted PII JSON (img1.json, img2.json, ...)
 
 ⚙️ Setup
-1. Python & uv
+1️⃣ Install Python & dependencies
 
-Make sure you have:
+Requirements:
 
 Python 3.10+
 
-uv
-installed
+uv package manager
 
-Then in your project folder:
+Install deps:
 
 uv sync
 
 
-(or, if you’re not using uv yet: uv add the dependencies listed above)
+(or without uv → uv add all dependencies listed above)
 
-2. Environment variables (.env)
+2️⃣ Environment variables
 
-Create a .env file in the project root:
+Create .env in the project root:
+
 RAPIDAPI_KEY=your_rapidapi_key_here
 
 🚀 Usage
 
-Drop your images into the input/ folder
-Examples:
+Put your scanned images inside input/
+
+Example:
 
 input/
-├─ img1.jpg   # progress report
-├─ img2.jpg   # drug administration chart
-└─ img3.jpg   # another case sheet
+├─ img1.jpg
+├─ img2.jpg
+└─ img3.png
 
 
 Run the pipeline:
@@ -92,21 +98,17 @@ Run the pipeline:
 uv run pipeline.py
 
 
-The script will:
+📌 The script automatically detects all files inside input/.
 
-Auto-detect all files in input/
-
-Example output:
-
+Example console output
 📂 Found 3 file(s) in input/:
    → img1.jpg
    → img2.jpg
-   → img3.jpg
+   → img3.png
 
 🚀 Processing: img1.jpg
 📝 OCR saved → output/ocr_text/img1.txt
 🔐 PII saved → output/pii_json/img1.json
 ✔ Completed
 
-🚀 Processing: img2.jpg
-...
+🔁 Re-running the pipeline
