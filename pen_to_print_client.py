@@ -1,13 +1,8 @@
-# pen_to_print_client.py
 from typing import Dict, Any, Optional
 from io import BytesIO
-
 import requests
 from PIL import Image, ImageOps
-
 from config import PEN_TO_PRINT_API_KEY, PEN_TO_PRINT_ENDPOINT
-
-
 class PenToPrintClient:
     """
     Wrapper for Pen-to-Print Handwriting OCR on RapidAPI.

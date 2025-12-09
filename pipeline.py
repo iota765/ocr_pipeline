@@ -1,7 +1,6 @@
 from pathlib import Path
 import json
 import traceback
-
 from pen_to_print_client import PenToPrintClient
 from pii_extractor import extract_pii
 
