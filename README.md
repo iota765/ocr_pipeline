@@ -36,7 +36,7 @@ It automatically:
 
 ### 🔌 OCR Provider
 
-> The pipeline is powered by **Pen-to-Print – Handwriting OCR API**, capable of converting handwritten medical notes into machine-readable text.
+The pipeline is powered by **Pen-to-Print – Handwriting OCR API**, capable of converting handwritten medical notes into machine-readable text.
 
 📌 API page: https://rapidapi.com/pen-to-print-pen-to-print-default/api/pen-to-print-handwriting-ocr  
 ⚡ Category: Visual – Handwriting Recognition  
