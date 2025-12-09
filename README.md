@@ -28,12 +28,20 @@ It automatically:
 
 | Purpose | Library |
 |--------|---------|
-| Pen-to-Print – Handwriting OCR | RapidAPI | https://rapidapi.com/pen-to-print-pen-to-print-default/api/pen-to-print-handwriting-ocr |
 | OCR API call | `requests` |
 | Image handling & EXIF auto-rotation | `pillow` |
 | Env vars & secrets | `python-dotenv` |
 | Regex for PII & medical patterns | `regex` |
 | Optional image preprocessing | `opencv-python`, `numpy` |
+
+### 🔌 OCR Provider
+
+> The pipeline is powered by **Pen-to-Print – Handwriting OCR API**, capable of converting handwritten medical notes into machine-readable text.
+
+📌 API page: https://rapidapi.com/pen-to-print-pen-to-print-default/api/pen-to-print-handwriting-ocr  
+⚡ Category: Visual – Handwriting Recognition  
+🛠️ Provider: Pen-to-Print  
+
 
 From `pyproject.toml`:
 
