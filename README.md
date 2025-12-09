@@ -28,7 +28,7 @@ data/temp/ → preprocessed images used for OCR
 The pipeline was originally designed for **Google Cloud Vision OCR**, but the Vision API requires **billing / paid usage**.  
 To make this project **fully free and runnable anywhere**, the OCR component was switched to **local Tesseract OCR**.
 
-> The code is modular — switching back to Google Vision or AWS Textract would only require replacing the OCR function, without modifying the rest of the pipeline.
+## The code is modular — switching back to Google Vision or AWS Textract would only require replacing the OCR function, without modifying the rest of the pipeline.
 
 ---
 
