@@ -28,6 +28,7 @@ It automatically:
 
 | Purpose | Library |
 |--------|---------|
+| Pen-to-Print – Handwriting OCR | RapidAPI | https://rapidapi.com/pen-to-print-pen-to-print-default/api/pen-to-print-handwriting-ocr |
 | OCR API call | `requests` |
 | Image handling & EXIF auto-rotation | `pillow` |
 | Env vars & secrets | `python-dotenv` |
