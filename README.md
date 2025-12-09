@@ -1,54 +1,112 @@
-# OCR + PII Extraction for Handwritten Medical Documents
+# Medical Handwriting OCR & PII Extraction Pipeline
 
-This project performs **OCR and automatic PII redaction** on handwritten medical sheets (progress notes / admission forms).  
-It extracts text from scanned pages, detects sensitive patient information (PII), and **removes it from both the text and the image** to ensure complete privacy protection.
+This project is a **batch OCR + PII extraction pipeline** for handwritten **hospital case sheets, progress notes, and drug charts**.
 
----
+It:
 
-## 🔄 Pipeline Overview
-Input Image
-→ Preprocessing (grayscale, denoise, deskew)
-→ OCR (Tesseract)
-→ Text Cleaning
-→ PII Detection (Regex)
-→ Redacted Text + Redacted Image
+- Reads **handwritten medical documents** (JPG/PNG/PDF → image).
+- Uses an **OCR engine** (currently Pen-to-Print via RapidAPI).
+- Normalizes the raw text.
+- Extracts **structured PII + clinical info**, including:
+  - Patient name, IPD No, UHID, Age, Sex, Bed No
+  - Vitals (BP, PR, RR, Temperature)
+  - Medications (drug name, dose, route, frequency)
+  - Generic PII (dates, phones, emails, etc.)
+- Saves:
+  - OCR text as `output/ocr_text/<image_name>.txt`
+  - PII JSON as `output/pii_json/<image_name>.json`
 
-## Folder Structure
-data/input/ → input handwritten images
-data/output/text/ → extracted OCR text
-data/output/redacted_text/ → PII-masked text
-data/output/redacted_images/→ images with black boxes over PII
-data/output/logs/ → PII JSON logs
-data/temp/ → preprocessed images used for OCR
+This pipeline was built specifically around **real hospital documents** and tuned for noisy handwriting + OCR errors.
 
 ---
 
-## ⚠ OCR Engine Notice (Tesseract vs Google Vision)
+## 🧱 Tech Stack
 
-The pipeline was originally designed for **Google Cloud Vision OCR**, but the Vision API requires **billing / paid usage**.  
-To make this project **fully free and runnable anywhere**, the OCR component was switched to **local Tesseract OCR**.
+Core libraries used:
 
-## The code is modular — switching back to Google Vision or AWS Textract would only require replacing the OCR function, without modifying the rest of the pipeline.
+- `requests` – calling the OCR API (Pen-to-Print via RapidAPI)
+- `pillow` – image loading and **auto-rotation** (EXIF-based)
+- `python-dotenv` – managing secrets via `.env`
+- `regex` – robust pattern matching for PII & meds
 
----
+## Dependencies (from `pyproject.toml`):
 
-## ▶ How to Run
+```toml
+dependencies = [
+    "numpy>=2.3.5",
+    "opencv-python>=4.11.0.86",
+    "pillow>=12.0.0",
+    "python-dotenv>=1.2.1",
+    "regex==2024.9.11",
+    "requests>=2.32.5",
+]
+📁 Project Structure
+ocr/
+├─ pipeline.py              # Main entry point: batch process input/ → output/
+├─ pen_to_print_client.py   # RapidAPI Pen-to-Print OCR wrapper (with rotation fix)
+├─ pii_extractor.py         # All regex logic: PII + clinical + medications
+├─ config.py                # Loads API keys / endpoints from .env
+├─ .env                     # Environment variables (NOT committed)
+│
+├─ input/                   # Put your scanned images here (img1.jpg, img2.jpg, ...)
+│
+└─ output/
+   ├─ ocr_text/             # Raw OCR text files (img1.txt, img2.txt, ...)
+   └─ pii_json/             # Extracted PII in JSON per image
 
-1️⃣ Install dependencies
-pip install -r requirements.txt
+⚙️ Setup
+1. Python & uv
 
-2️⃣ Install Tesseract OCR (Windows)
-Download: https://github.com/UB-Mannheim/tesseract/wiki
+Make sure you have:
 
-If needed, set executable path in code:
-```python
-pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-3️⃣ Add input images
+Python 3.10+
 
-Place .jpg/.jpeg/.png files into:
+uv
+installed
 
-data/input/
+Then in your project folder:
 
-4️⃣ Run the pipeline
-python main.py
+uv sync
 
+
+(or, if you’re not using uv yet: uv add the dependencies listed above)
+
+2. Environment variables (.env)
+
+Create a .env file in the project root:
+RAPIDAPI_KEY=your_rapidapi_key_here
+
+🚀 Usage
+
+Drop your images into the input/ folder
+Examples:
+
+input/
+├─ img1.jpg   # progress report
+├─ img2.jpg   # drug administration chart
+└─ img3.jpg   # another case sheet
+
+
+Run the pipeline:
+
+uv run pipeline.py
+
+
+The script will:
+
+Auto-detect all files in input/
+
+Example output:
+
+📂 Found 3 file(s) in input/:
+   → img1.jpg
+   → img2.jpg
+   → img3.jpg
+
+🚀 Processing: img1.jpg
+📝 OCR saved → output/ocr_text/img1.txt
+🔐 PII saved → output/pii_json/img1.json
+✔ Completed
+
+🚀 Processing: img2.jpg
+...

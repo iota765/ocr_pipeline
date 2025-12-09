@@ -1,0 +1,78 @@
+{
+  "patient_names": [
+    "Santosh Pradhan"
+  ],
+  "ages": [
+    "364",
+    "364"
+  ],
+  "sex": [],
+  "ipd_numbers": [
+    "4236427833\nUHID No",
+    "2236927833\nUHID No"
+  ],
+  "uhid_numbers": [
+    "202504110145\nBed No ",
+    " "
+  ],
+  "bed_numbers": [
+    "10"
+  ],
+  "blood_pressures": [
+    "115/72"
+  ],
+  "pulse_rates": [
+    "78"
+  ],
+  "respiratory_rates": [
+    "16"
+  ],
+  "temperatures": [
+    "40"
+  ],
+  "phone_numbers": [],
+  "emails": [],
+  "dates": [
+    "16/04/25"
+  ],
+  "pan_numbers": [],
+  "aadhaar_numbers": [],
+  "medications": [
+    {
+      "name": "INI LOPEZ (1 amp) clow IV BD and",
+      "dose": "2",
+      "route": "IV",
+      "frequency": "BD"
+    },
+    {
+      "name": "INJ PAN (40) 1 VIal IN OD B/BF",
+      "dose": "3",
+      "route": "",
+      "frequency": "OD"
+    },
+    {
+      "name": "Cap BIFILAC HP 1 cap BD",
+      "dose": "4",
+      "route": "",
+      "frequency": "BD"
+    },
+    {
+      "name": "Cap DexORANGE I Cap OD morning",
+      "dose": "5",
+      "route": "",
+      "frequency": "OD"
+    },
+    {
+      "name": "Syp HEPALIV PLUS (IQUI) BD",
+      "dose": "6",
+      "route": "",
+      "frequency": "BD"
+    },
+    {
+      "name": "GEL for HA",
+      "dose": "7",
+      "route": "",
+      "frequency": ""
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "patient_names": [],
+  "ages": [],
+  "sex": [],
+  "ipd_numbers": [],
+  "uhid_numbers": [],
+  "bed_numbers": [],
+  "blood_pressures": [],
+  "pulse_rates": [],
+  "respiratory_rates": [],
+  "temperatures": [
+    "24"
+  ],
+  "phone_numbers": [],
+  "emails": [],
+  "dates": [
+    "11/4/25",
+    "12/4/20",
+    "15/4/25",
+    "17/4/25"
+  ],
+  "pan_numbers": [],
+  "aadhaar_numbers": [],
+  "medications": [
+    {
+      "name": "TAB- TAXIM",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "Syp - HEPALIN PLUS",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "INJ-LOPEZ",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "CAP· BIFILAS",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "cap",
+      "dose": "1 cap",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "CAP DEKORANDIE",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "GEL",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "INJ-LOPEZ",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "TAB. PAN",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "TAB NALTIMA",
+      "dose": "",
+      "route": "",
+      "frequency": ""
+    }
+  ]
+}

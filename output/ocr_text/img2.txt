@@ -1,0 +1,239 @@
+Drug (Approved Name)
+11
+12 13
+(6)
+INT- PAN
+10
+Jose
+40 mg
+Route Other Direction
+IV
+oncea
+Day
+14
+18
+12
+ate & Time Signature
+11/4/25
+22
+DO. H.M
+24
+14 15 16/17
+8 19 20 21 22
+H
+14/25
+0
+4
+7 yeMY
+Drug (Approved Name)
+8
+TAB- TAXIM
+10
+Dose
+Route
+P10
+Other Direction
+12
+200mg
+Twice a
+14
+Dan
+18
+Date & Time Signature
+11/4/25/35. H.M
+24
+(22)
+-
+#
+Drug (Approved Name)
+Syp - HEPALIN PLUS
+6
+10
+Dose
+10ml
+×
+X
+Route Other Direction
+PIO
+Twice a
+day
+12
+14
+18
+Date & Time Signature
+2.4.25 DR,&Ragh
+(2)
+×
+X
+24
+1)
+D
+her
+Amy Am chycu
+Drug (Approved Name)
+INJ-LOPEZ
+R.2
+6
+10
+Dose
+1amp
+Route
+IV
+Other Direction
+12
+14
+Date & Time Signature
+15/4/25 /Dns-RDSh.
+18-
+24
+Diman Hul
+Drug (Approved Name)
+CAP· BIFILAS
+6
+Dose
+1 cap
+P/O
+Route
+HP
+90
+12
+Other Direction
+Twicey
+14
+18
+10)
+Date & Time Signature
+151425 DasRiDim
+24
+Drug (Approved Name)
+CAP DEKORANDIE
+6
+Dose
+1COP PIO
+Route
+Other Direction
+once 9
+(10 )
+12
+14
+solar
+Dale & Time |Signature
+15/4/25
+Dr.s.Resan
+18
+22
+24
+brug (Approved Name)
+6
+1
+THROMBOPHOR GEL
+10
+Dose
+Route Other Direction
+44
+12
+14
+18
+Date & Time Signature
+15.4.25
+DR. Rakesh
+22
+24
+Drug (Approved Name)
+NICOGUM CHEWIE
+6
+(10)
+Dose
+Route
+2MY
+Other Direction
+utimes
+(4)
+12
+(18)
+Date & Time
+16.4.25
+Signature
+DR.A. Mohast
+24
+And
+Drug (Approved Name)
+NICOGUM CHEWIE
+6
+10
+Dose
+2mg
+Route
+P10
+Other Direction
+Stimes
+Jan
+(12)
+(14)
+Date & Time Signature
+171425 Dresposh.
+(22)
+24
+Drug (Approved Name)
+INJ-LOPEZ
+R-2
+Dose
+1001
+Route
+IV
+Other Direction
+Twicey
+12
+14
+Date & Time
+12/4/20
+Signature
+DASRIgh
+18
+(2) 200
+24
+Forse modifid
+DEF-S.R.Dash
+-19.4.25
+2
+:30AM
+Drug (Approved Name)
+TAB. PAN
+6
+10
+Dose
+40mg
+Route
+PIO
+Other Direction
+once a day
+14
+12
+18
+Date & Time Signature
+17/4/25
+DH. S.R. Josh
+22
+24
+Drug (Approved Name)
+TAB NALTIMA
+6
+(10) 1/2tab
+12
+14
+18
+se modifica
+S.R.Dash
+021/4/25
+Dose
+Sing
+Route Other Direction
+PIO
+once a
+day
+6 days
+Date & Time Signature Odays
+18.4.05
+22
+Time 11 10AM
+24

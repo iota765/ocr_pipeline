@@ -1,0 +1,78 @@
+{
+  "patient_names": [
+    "Santosh"
+  ],
+  "ages": [
+    "364"
+  ],
+  "sex": [
+    "M"
+  ],
+  "ipd_numbers": [
+    "PLAN OF CARE\n"
+  ],
+  "uhid_numbers": [
+    "20250 410195\nDept "
+  ],
+  "bed_numbers": [
+    "10"
+  ],
+  "blood_pressures": [],
+  "pulse_rates": [],
+  "respiratory_rates": [],
+  "temperatures": [
+    "31"
+  ],
+  "phone_numbers": [],
+  "emails": [],
+  "dates": [
+    "11/4/25",
+    "11/4/28"
+  ],
+  "pan_numbers": [],
+  "aadhaar_numbers": [],
+  "medications": [
+    {
+      "name": "INI. THIAMINE (200) I",
+      "dose": "1",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "INI. LOPEZ (lamp) slaw",
+      "dose": "2",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "INI PAN (40) ( viael ZU OD",
+      "dose": "3",
+      "route": "",
+      "frequency": "OD"
+    },
+    {
+      "name": "MAB TAXIM - 0 (200) 1 MB BD",
+      "dose": "5",
+      "route": "",
+      "frequency": "BD"
+    },
+    {
+      "name": "Inj THIAMINE (200)",
+      "dose": "1 ",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "Inj LOPEZ (1 amp) slow",
+      "dose": "2 ",
+      "route": "",
+      "frequency": ""
+    },
+    {
+      "name": "Tab. TAXIM-O (200)",
+      "dose": "4",
+      "route": "",
+      "frequency": ""
+    }
+  ]
+}
