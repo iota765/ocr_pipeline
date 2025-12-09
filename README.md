@@ -45,7 +45,9 @@ dependencies = [
     "regex==2024.9.11",
     "requests>=2.32.5",
 ]
-📁 Project Structure
+
+```
+## 📁 Project Structure
 ocr/
 ├─ pipeline.py              # Main entry point: batch process input/ → output/
 ├─ pen_to_print_client.py   # OCR wrapper (rotation fix + error handling)
