@@ -45,9 +45,13 @@ dependencies = [
     "regex==2024.9.11",
     "requests>=2.32.5",
 ]
+```
+
+---
+
+## 📁 Project Structure
 
 ```
-## 📁 Project Structure
 ocr/
 ├─ pipeline.py              # Main entry point: batch process input/ → output/
 ├─ pen_to_print_client.py   # OCR wrapper (rotation fix + error handling)
@@ -60,50 +64,65 @@ ocr/
 └─ output/
    ├─ ocr_text/             # Raw OCR text (img1.txt, img2.txt, ...)
    └─ pii_json/             # Extracted PII JSON (img1.json, img2.json, ...)
-
 ```
-⚙️ Setup
-1️⃣ Install Python & dependencies
+
+---
+
+## ⚙️ Setup
+
+### 1️⃣ Install Python & dependencies
 
 Requirements:
 
-Python 3.10+
+- Python **3.10+**
+- **uv** package manager
 
-uv package manager
+Install dependencies:
 
-Install deps:
-
+```bash
 uv sync
+```
 
+(or without uv → manually add all dependencies listed above)
 
-(or without uv → uv add all dependencies listed above)
+---
 
-2️⃣ Environment variables
+### 2️⃣ Environment variables
 
-Create .env in the project root:
+Create a `.env` file in the project root:
 
+```
 RAPIDAPI_KEY=your_rapidapi_key_here
+```
 
-🚀 Usage
+---
 
-Put your scanned images inside input/
+## 🚀 Usage
+
+Put your scanned images inside the `input/` folder.
 
 Example:
 
+```
 input/
 ├─ img1.jpg
 ├─ img2.jpg
 └─ img3.png
-
+```
 
 Run the pipeline:
 
+```bash
 uv run pipeline.py
+```
 
+📌 The script automatically detects all files inside `input/`.
 
-📌 The script automatically detects all files inside input/.
+---
 
-Example console output
+### Example console output
+
+```
 📂 Found 3 file(s) in input/:
    → img1.jpg
    → img2.jpg
@@ -113,5 +132,6 @@ Example console output
 📝 OCR saved → output/ocr_text/img1.txt
 🔐 PII saved → output/pii_json/img1.json
 ✔ Completed
+```
 
-🔁 Re-running the pipeline
+---
