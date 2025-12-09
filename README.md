@@ -4,6 +4,17 @@ A **batch OCR + PII extraction system** designed for handwritten **hospital case
 
 ---
 
+## 📥 Installation
+
+Clone the repository and navigate into the project folder:
+
+```bash
+https://github.com/iota765/ocr_pipeline.git
+cd ocr_pipeline
+```
+
+---
+
 ## 🔍 What the pipeline does
 
 It automatically:
