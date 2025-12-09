@@ -29,7 +29,7 @@ Core libraries used:
 - `python-dotenv` – managing secrets via `.env`
 - `regex` – robust pattern matching for PII & meds
 
-## Dependencies (from `pyproject.toml`):
+Dependencies (from `pyproject.toml`):
 
 ```toml
 dependencies = [
