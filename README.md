@@ -61,6 +61,7 @@ ocr/
    ├─ ocr_text/             # Raw OCR text (img1.txt, img2.txt, ...)
    └─ pii_json/             # Extracted PII JSON (img1.json, img2.json, ...)
 
+```
 ⚙️ Setup
 1️⃣ Install Python & dependencies
 
